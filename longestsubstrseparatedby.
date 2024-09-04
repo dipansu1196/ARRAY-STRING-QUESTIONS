@@ -1,0 +1,35 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+string largests(string s){
+    string maxi;
+    string str;
+    int i=0,j=0;
+    while(i<s.length()&&j<s.length()){
+        if(s[j]=='.'){
+            i=j+1;
+           
+            if(str.length()>maxi.length()){
+                maxi=str;
+            }
+            str="";
+        }
+        if(s[j]!='.')
+        str+=s[j];
+        j++;
+    }
+    return maxi;
+}
+
+
+int main() {
+    // Write C++ code here
+    std::cout << "Try programiz.pro";
+    string s;
+    getline(cin,s);
+    string largest=largests(s);
+    cout<<largest<<endl;
+
+    return 0;
+}
