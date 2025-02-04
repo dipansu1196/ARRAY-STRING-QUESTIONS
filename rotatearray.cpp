@@ -13,12 +13,16 @@ for(int i=0;i<n;i++){
     cin>>arr[i];
 }
 int result[n];
-for(int i=0;i<k;i++){
-    result[i]=arr[n-k+i];
+for (int i = 0; i < n - k; i++) {
+    result[i] = nums[k + i]; // Copy elements from k to end
 }
-for(int i=k, j=0;i<n,j<(n-k);i++,j++){
-    result[i]=arr[j];
+for (int i = n - k, j = 0; i < n; i++, j++) {
+    result[i] = nums[j]; // Copy elements from start to k - 1
 }
+    // or
+(    for (int i = 0; i < n; i++) {
+    result[i] = nums[(k + i) % n]; // Rotate the array
+}  )
 for(int i=0;i<n;i++){
     cout<<result[i]<<"";
 }
